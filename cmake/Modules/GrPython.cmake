@@ -107,7 +107,7 @@ endmacro(GR_PYTHON_CHECK_MODULE)
 if(NOT DEFINED GR_PYTHON_DIR)
 execute_process(COMMAND ${PYTHON_EXECUTABLE} -c "
 from distutils import sysconfig
-print sysconfig.get_python_lib(plat_specific=True, prefix='')
+print(sysconfig.get_python_lib(plat_specific=True, prefix=''))
 " OUTPUT_VARIABLE GR_PYTHON_DIR OUTPUT_STRIP_TRAILING_WHITESPACE
 )
 endif()
@@ -123,7 +123,7 @@ function(GR_UNIQUE_TARGET desc)
 unique = hashlib.md5('${reldir}${ARGN}').hexdigest()[:5]
 print(re.sub('\\W', '_', '${desc} ${reldir} ' + unique))"
     OUTPUT_VARIABLE _target OUTPUT_STRIP_TRAILING_WHITESPACE)
-    add_custom_target(${_target} ALL DEPENDS ${ARGN})
+    #add_custom_target(${_target} ALL DEPENDS ${ARGN})
 endfunction(GR_UNIQUE_TARGET)
 
 ########################################################################
