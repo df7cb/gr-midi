@@ -36,7 +36,7 @@ namespace gr {
 		 bool timing_check,
 		 bool active_sensing_check
 		){
-			return gnuradio::get_initial_sptr(
+			return gr::midi::midi_pdu_source::sptr(
 			 new midi_pdu_source_impl(
 			  name_conexion,
 			  name_port,

@@ -33,7 +33,7 @@ namespace gr {
 		 std::string name_conexion,
 		 std::string name_port
 		){
-			return gnuradio::get_initial_sptr(
+			return gr::midi::midi_pdu_sink::sptr(
 			 new midi_pdu_sink_impl(
 			  name_conexion,
 			  name_port
