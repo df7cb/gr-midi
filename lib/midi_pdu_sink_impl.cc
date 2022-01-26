@@ -88,7 +88,7 @@ namespace gr {
 			message_port_register_in(pmt::mp("midiIn"));
 			set_msg_handler(
 			 pmt::mp("midiIn"),
-			 boost::bind(&midi_pdu_sink_impl::callback_midi_sink_pdu, this, _1)
+			 boost::bind(&midi_pdu_sink_impl::callback_midi_sink_pdu, this, std::placeholders::_1)
 			);
 		}
 		
